@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width: 1280px; height: 720px;
+    background: #0A0A0A;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    padding: 56px 80px;
+    position: relative;
+  }
+  .glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,166,35,0.06) 0%, transparent 70%);
+    filter: blur(80px);
+    top: 40%; left: 30%;
+    pointer-events: none;
+  }
+  .header { text-align: center; margin-bottom: 36px; }
+  .section-label {
+    color: #F5A623;
+    font-size: 14px; font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+  }
+  h2 {
+    font-size: 38px; font-weight: 800;
+    color: #fff;
+    letter-spacing: -1.5px;
+  }
+  .sub {
+    color: #666; font-size: 16px;
+    margin-top: 8px;
+  }
+  .layout {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .features-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 12px;
+  }
+  .feature-check {
+    color: #F5A623;
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .feature-text {
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .pricing-card {
+    background: linear-gradient(180deg, #1A1A1A, #111);
+    border: 1px solid rgba(245,166,35,0.2);
+    border-radius: 24px;
+    padding: 40px 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .pricing-card::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(245,166,35,0.06) 0%, transparent 50%);
+  }
+  .pricing-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #F5A623, #E8941A);
+    color: #0A0A0A;
+    font-size: 12px; font-weight: 800;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .pricing-title {
+    color: #fff;
+    font-size: 20px; font-weight: 700;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .price {
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .price .old {
+    color: #555;
+    font-size: 16px;
+    text-decoration: line-through;
+  }
+  .price .amount {
+    color: #fff;
+    font-size: 52px; font-weight: 900;
+    letter-spacing: -2px;
+  }
+  .price .currency {
+    color: #F5A623;
+    font-size: 22px; font-weight: 700;
+  }
+  .price .period {
+    color: #666;
+    font-size: 15px;
+    display: block;
+    margin-top: 4px;
+  }
+  .trial-tag {
+    color: #F5A623;
+    font-size: 14px; font-weight: 600;
+    margin: 16px 0 24px;
+    position: relative;
+  }
+  .pricing-btn {
+    background: linear-gradient(135deg, #F5A623, #E8941A);
+    color: #0A0A0A;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 12px;
+    font-size: 16px; font-weight: 700;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(245,166,35,0.25);
+  }
+  .pricing-note {
+    color: #555;
+    font-size: 12px;
+    margin-top: 16px;
+    position: relative;
+  }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+
+  <div class="header">
+    <div class="section-label">✦ Тарифы</div>
+    <h2>Что входит в подписку</h2>
+    <p class="sub">Всё включено — без скрытых платежей</p>
+  </div>
+
+  <div class="layout">
+    <div class="features-list">
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Персональный ИИ-ассистент для бизнеса</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Работа с текстом, расчётами, документами</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Генерация изображений и презентаций</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Генерация видео и визуального контента</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Создание приложений, сайтов, автоматизаций</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Анализ конкурентов и рынка</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Еженедельное обучение по Zoom</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Чат-комьюнити с уроками</span>
+      </div>
+      <div class="feature-item" style="grid-column: span 2;">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Поддержка и консультации 24/7</span>
+      </div>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-badge">🎯 ТЕСТ 12 часов бесплатно</div>
+      <div class="pricing-title">Полный доступ</div>
+      <div class="price">
+        <span class="old">35 000 ₽</span><br>
+        <span class="amount">25 000</span> <span class="currency">₽</span>
+        <span class="period">в месяц</span>
+      </div>
+      <div class="trial-tag">⏱ Первые 12 часов — бесплатно</div>
+      <button class="pricing-btn">Начать бесплатно →</button>
+      <div class="pricing-note">Отмена в любой момент · Без обязательств</div>
+    </div>
+  </div>
+</body>
+</html>

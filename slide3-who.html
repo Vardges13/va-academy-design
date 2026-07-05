@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width: 1280px; height: 720px;
+    background: #0A0A0A;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    padding: 56px 80px;
+    position: relative;
+  }
+  .glow {
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,166,35,0.05) 0%, transparent 70%);
+    filter: blur(80px);
+    top: 30%; left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+  .header { text-align: center; margin-bottom: 48px; }
+  .section-label {
+    color: #F5A623;
+    font-size: 14px; font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+  }
+  h2 {
+    font-size: 40px; font-weight: 800;
+    color: #fff;
+    letter-spacing: -1.5px;
+    margin-bottom: 12px;
+  }
+  .sub {
+    color: #666;
+    font-size: 16px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .card {
+    background: linear-gradient(180deg, #151515, #0F0F0F);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 18px;
+    padding: 36px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover {
+    border-color: rgba(245,166,35,0.2);
+  }
+  .icon-wrap {
+    width: 64px; height: 64px;
+    margin: 0 auto 24px;
+    background: rgba(245,166,35,0.1);
+    border: 1px solid rgba(245,166,35,0.2);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+  }
+  .card h3 {
+    color: #fff;
+    font-size: 18px; font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .card p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .card .highlight {
+    color: #F5A623;
+    font-weight: 600;
+  }
+  .bottom-bar {
+    margin-top: 36px;
+    text-align: center;
+    padding: 20px;
+    background: rgba(245,166,35,0.06);
+    border: 1px solid rgba(245,166,35,0.15);
+    border-radius: 14px;
+    color: #ccc;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .bottom-bar strong {
+    color: #F5A623;
+  }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+
+  <div class="header">
+    <div class="section-label">✦ Кому подходит</div>
+    <h2>Кому подходит ИИ-ассистент?</h2>
+    <p class="sub">Один помощник вместо целой команды специалистов</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon-wrap">📋</div>
+      <h3>Блогеры<br>и эксперты</h3>
+      <p>Посты, сценарии, карусели, Reels в вашем стиле. <span class="highlight">Экономия 3–5 часов ежедневно</span></p>
+    </div>
+    <div class="card">
+      <div class="icon-wrap">📊</div>
+      <h3>Предприниматели</h3>
+      <p>Финмодели, сметы, анализ рынка, проверка цен. <span class="highlight">За минуты, не за дни</span></p>
+    </div>
+    <div class="card">
+      <div class="icon-wrap">👔</div>
+      <h3>Руководители</h3>
+      <p>Отчёты, аналитика, планирование, стратегия. <span class="highlight">Рутина уходит, фокус на росте</span></p>
+    </div>
+    <div class="card">
+      <div class="icon-wrap">🏢</div>
+      <h3>Малый и<br>средний бизнес</h3>
+      <p>Программист, дизайнер, аналитик, коуч. <span class="highlight">Один ассистент на все задачи</span></p>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    💡 <strong>Дешевле одного сотрудника</strong> &nbsp;·&nbsp; Работает <strong>24/7 без выходных</strong>
+  </div>
+</body>
+</html>

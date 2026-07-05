@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width: 1280px; height: 720px;
+    background: #0A0A0A;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    padding: 56px 80px;
+    position: relative;
+  }
+  .glow {
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,166,35,0.05) 0%, transparent 70%);
+    filter: blur(80px);
+    top: 40%; right: -10%;
+    pointer-events: none;
+  }
+  .header { text-align: center; margin-bottom: 36px; }
+  .section-label {
+    color: #F5A623;
+    font-size: 14px; font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+  }
+  h2 {
+    font-size: 38px; font-weight: 800;
+    color: #fff;
+    letter-spacing: -1.5px;
+  }
+  .sub {
+    color: #666; font-size: 16px;
+    margin-top: 8px;
+  }
+  .table-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #141414, #0F0F0F);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .table-header {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    background: rgba(255,255,255,0.02);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .th {
+    padding: 20px 28px;
+    font-size: 15px; font-weight: 600;
+    text-align: center;
+  }
+  .th.first { text-align: left; color: #666; }
+  .th.chatgpt { color: #888; }
+  .th.vacademy {
+    color: #F5A623;
+    font-weight: 700;
+    font-size: 16px;
+    position: relative;
+  }
+  .th.vacademy::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 20%; right: 20%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #F5A623, transparent);
+  }
+  .table-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+  .table-row:last-child { border-bottom: none; }
+  .td {
+    padding: 14px 28px;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .td.first {
+    text-align: left;
+    justify-content: flex-start;
+    color: #aaa;
+    font-weight: 500;
+  }
+  .td.chatgpt { color: #555; }
+  .td.vacademy { color: #F5A623; font-weight: 600; }
+  .check { color: #F5A623; }
+  .cross { color: #444; }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 28px;
+  }
+  .tag {
+    background: rgba(245,166,35,0.08);
+    border: 1px solid rgba(245,166,35,0.15);
+    color: #F5A623;
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+
+  <div class="header">
+    <div class="section-label">✦ Возможности</div>
+    <h2>Что отличает нас от ChatGPT</h2>
+    <p class="sub">Не просто чат-бот, а персональный ассистент вашего бизнеса</p>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-header">
+      <div class="th first">Параметр</div>
+      <div class="th chatgpt">ChatGPT</div>
+      <div class="th vacademy">VAcademy</div>
+    </div>
+    <div class="table-row">
+      <div class="td first">🧠 Память</div>
+      <div class="td chatgpt">Забывает контекст</div>
+      <div class="td vacademy"><span class="check">✓</span> Помнит всё о вас</div>
+    </div>
+    <div class="table-row">
+      <div class="td first">⚙️ Настройка</div>
+      <div class="td chatgpt">Одинаковый для всех</div>
+      <div class="td vacademy"><span class="check">✓</span> Знает ваш бизнес</div>
+    </div>
+    <div class="table-row">
+      <div class="td first">📍 Где работает</div>
+      <div class="td chatgpt">Браузер / приложение</div>
+      <div class="td vacademy"><span class="check">✓</span> Telegram, WhatsApp</div>
+    </div>
+    <div class="table-row">
+      <div class="td first">🎓 Обучение</div>
+      <div class="td chatgpt">Нет</div>
+      <div class="td vacademy"><span class="check">✓</span> Zoom + комьюнити</div>
+    </div>
+    <div class="table-row">
+      <div class="td first">⚡ Действия</div>
+      <div class="td chatgpt">Только текст</div>
+      <div class="td vacademy"><span class="check">✓</span> Файлы, видео, картинки</div>
+    </div>
+    <div class="table-row">
+      <div class="td first">📈 Обучаемость</div>
+      <div class="td chatgpt">Каждый раз с нуля</div>
+      <div class="td vacademy"><span class="check">✓</span> Учится и запоминает</div>
+    </div>
+  </div>
+
+  <div class="tags">
+    <span class="tag">📊 Финмодели</span>
+    <span class="tag">🎬 Видео</span>
+    <span class="tag">📁 Контент</span>
+    <span class="tag">🖼 Картинки</span>
+    <span class="tag">🌐 Сайты</span>
+    <span class="tag">📱 Приложения</span>
+    <span class="tag">🔍 Аналитика</span>
+    <span class="tag">📄 Документы</span>
+  </div>
+</body>
+</html>
