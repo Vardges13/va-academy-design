@@ -253,70 +253,67 @@ a { color: inherit; text-decoration: none; }
   .nav-links { display: none; }
   .burger { display: flex; }
   .section-fixed-bg { background-attachment: scroll; }
-  .section-bg { min-height: auto; padding: 0; }
-  .section-content { min-height: 0; }
-  /* Scale down images on mobile - use as background with padding-top ratio */
-  .section-mobile-ratio {
-    min-height: 0 !important;
+  /* Show full image without cropping on mobile */
+  .section-bg {
+    min-height: 0;
     height: auto;
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    aspect-ratio: 16 / 9;
+    background-color: var(--bg);
+  }
+  .section-content {
+    min-height: 0;
+    position: absolute;
+    inset: 0;
   }
 }
 
 @media (max-width: 768px) {
   .section-bg {
-    background-attachment: scroll;
-    min-height: 0;
-    /* Use aspect-ratio to maintain 16:9 proportion */
-    aspect-ratio: 16 / 18;
+    aspect-ratio: 3 / 4;
   }
-  .section-content {
-    min-height: 0;
-  }
-  /* Adjust hotspots for smaller screens */
   .hero-hotspot-cta, .hero-hotspot-trial,
-  .cta-hotspot-test, .cta-hotspot-question,
-  .pricing-hotspot {
-    width: 48%;
-    height: 44px;
+  .cta-hotspot-test, .cta-hotspot-question {
+    width: 46%;
+    height: 48px;
+    bottom: 20%;
   }
   .hero-hotspot-cta {
-    bottom: 18%;
-    transform: translateX(-95%);
+    left: 27%;
+    transform: none;
   }
   .hero-hotspot-trial {
-    bottom: 18%;
-    transform: translateX(5%);
+    left: 73%;
+    transform: translateX(-100%);
   }
   .cta-hotspot-test {
+    left: 27%;
     bottom: 32%;
-    transform: translateX(-105%);
+    transform: none;
   }
   .cta-hotspot-question {
+    left: 73%;
     bottom: 32%;
-    transform: translateX(5%);
+    transform: translateX(-100%);
   }
   .pricing-hotspot {
-    bottom: 8%;
-    right: 5%;
-    width: 60%;
+    bottom: 12%;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 50%;
   }
 }
 
 @media (max-width: 480px) {
   .section-bg {
-    aspect-ratio: 9 / 20;
+    aspect-ratio: 3 / 4.5;
   }
-  .hero-hotspot-cta {
-    bottom: 15%;
-    transform: translateX(-95%);
-    width: 46%;
-    height: 38px;
-  }
-  .hero-hotspot-trial {
-    bottom: 15%;
-    transform: translateX(5%);
-    width: 46%;
-    height: 38px;
+  .hero-hotspot-cta, .hero-hotspot-trial {
+    height: 36px;
+    bottom: 17%;
   }
 }
 
