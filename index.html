@@ -226,6 +226,44 @@ img,svg{display:block}
 .mobile-menu a{color:var(--text-grey);font-size:16px;font-weight:500;padding:10px 0;border-bottom:1px solid var(--border)}
 .mobile-menu a:last-child{border-bottom:none;color:var(--gold);font-weight:700}
 
+/* ═══ MOBILE SLIDES ═══ */
+.mobile-only{display:none}
+.m-slide{
+  width:100%;
+  aspect-ratio:9/19.5;
+  background-size:cover;
+  background-position:center top;
+  background-repeat:no-repeat;
+  background-color:var(--bg);
+  position:relative;
+}
+.m-hotspot{
+  position:absolute;
+  cursor:pointer;
+  border-radius:12px;
+  transition:all 0.2s;
+}
+.m-hotspot:hover,.m-hotspot:active{
+  background:rgba(245,166,35,0.1);
+}
+/* Hero hotspots */
+.m-hero-btn1{bottom:28%;left:10%;width:80%;height:7%}
+.m-hero-btn2{bottom:19%;left:10%;width:80%;height:7%}
+/* What we do - cards clickable */
+.m-what-card1{top:48%;left:5%;width:90%;height:11%}
+.m-what-card2{top:62%;left:5%;width:90%;height:11%}
+.m-what-card3{top:76%;left:5%;width:90%;height:11%}
+/* Who - cards clickable */
+.m-who-card1{top:30%;left:5%;width:90%;height:10%}
+.m-who-card2{top:42%;left:5%;width:90%;height:10%}
+.m-who-card3{top:54%;left:5%;width:90%;height:10%}
+.m-who-card4{top:66%;left:5%;width:90%;height:10%}
+/* Pricing button */
+.m-pricing-btn{bottom:6%;left:15%;width:70%;height:6%}
+/* CTA buttons */
+.m-cta-btn1{bottom:34%;left:10%;width:80%;height:7%}
+.m-cta-btn2{bottom:25%;left:10%;width:80%;height:7%}
+
 @media(max-width:968px){
   .nav-links{display:none}.burger{display:flex}
   .cards-3{grid-template-columns:1fr}
@@ -233,6 +271,11 @@ img,svg{display:block}
   .pricing-layout{grid-template-columns:1fr}
   .cmp-row{grid-template-columns:1fr 1fr}
   .cmp-cell.label{grid-column:span 2;padding-bottom:4px;font-size:14px}
+  /* Show mobile slides, hide desktop sections */
+  .desktop-only{display:none!important}
+  .mobile-only{display:block}
+  .section,.hero,.footer{display:none}
+  .mobile-footer{display:block!important}
 }
 @media(max-width:600px){
   .section{padding:70px 16px}
@@ -492,11 +535,57 @@ img,svg{display:block}
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
+<footer class="footer desktop-only">
   <div class="logo" style="display:inline-flex"><svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M16 4L4 28h6l6-12 6 12h6L16 4z" fill="#F5A623"/></svg>V<span>Academy</span></div>
   <div class="footer-text">© 2026 VAcademy. ИИ-ассистенты для бизнеса.</div>
   <div class="footer-made">Этот лендинг создал мой ИИ-ассистент ✦</div>
 </footer>
+
+<!-- ═══ MOBILE SLIDES (vertical 9:16) ═══ -->
+<div class="mobile-only">
+  <div style="height:60px"></div><!-- nav spacer -->
+
+  <!-- M1: Hero -->
+  <div class="m-slide" id="m-hero" style="background-image:url('mobile/slide1-hero.png')">
+    <a href="#m-what" class="m-hotspot m-hero-btn1"></a>
+    <a href="#m-pricing" class="m-hotspot m-hero-btn2"></a>
+  </div>
+
+  <!-- M2: What we do -->
+  <div class="m-slide" id="m-what" style="background-image:url('mobile/slide2-what.png')">
+    <a href="#m-contact" class="m-hotspot m-what-card1"></a>
+    <a href="#m-contact" class="m-hotspot m-what-card2"></a>
+    <a href="#m-contact" class="m-hotspot m-what-card3"></a>
+  </div>
+
+  <!-- M3: Who -->
+  <div class="m-slide" id="m-who" style="background-image:url('mobile/slide3-who.png')">
+    <a href="#m-pricing" class="m-hotspot m-who-card1"></a>
+    <a href="#m-pricing" class="m-hotspot m-who-card2"></a>
+    <a href="#m-pricing" class="m-hotspot m-who-card3"></a>
+    <a href="#m-pricing" class="m-hotspot m-who-card4"></a>
+  </div>
+
+  <!-- M4: Comparison -->
+  <div class="m-slide" id="m-compare" style="background-image:url('mobile/slide4-comparison.png')"></div>
+
+  <!-- M5: Pricing -->
+  <div class="m-slide" id="m-pricing" style="background-image:url('mobile/slide5-pricing.png')">
+    <a href="#m-contact" class="m-hotspot m-pricing-btn"></a>
+  </div>
+
+  <!-- M6: CTA -->
+  <div class="m-slide" id="m-contact" style="background-image:url('mobile/slide6-cta.png')">
+    <a href="https://t.me/vardges_13" target="_blank" class="m-hotspot m-cta-btn1"></a>
+    <a href="https://t.me/vardges_13" target="_blank" class="m-hotspot m-cta-btn2"></a>
+  </div>
+
+  <!-- Mobile footer -->
+  <footer class="footer mobile-footer" style="display:none;padding:24px 16px">
+    <div class="logo" style="display:inline-flex;font-size:18px">V<span>Academy</span></div>
+    <div class="footer-text" style="font-size:12px;margin-top:4px">© 2026 VAcademy</div>
+  </footer>
+</div>
 
 <script>
 // Nav scroll
@@ -518,6 +607,16 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
     if(target){e.preventDefault();const top=target.getBoundingClientRect().top+window.pageYOffset-60;window.scrollTo({top,behavior:'smooth'})}
   });
 });
+
+// Mobile menu link fix - point to mobile sections on mobile
+const isMobile=window.matchMedia('(max-width:968px)').matches;
+if(isMobile){
+  const linkMap={'#what':'#m-what','#who':'#m-who','#compare':'#m-compare','#pricing':'#m-pricing','#contact':'#m-contact'};
+  document.querySelectorAll('.mobile-menu a').forEach(a=>{
+    const href=a.getAttribute('href');
+    if(linkMap[href])a.setAttribute('href',linkMap[href]);
+  });
+}
 
 // Reveal on scroll
 const observer=new IntersectionObserver(entries=>{
