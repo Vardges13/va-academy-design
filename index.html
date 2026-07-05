@@ -230,15 +230,22 @@ img,svg{display:block}
 .mobile-only{display:none}
 .m-slide{
   width:100%;
-  aspect-ratio:9/19.5;
-  background-size:cover;
+  background-size:contain;
   background-position:center top;
   background-repeat:no-repeat;
   background-color:var(--bg);
   position:relative;
 }
-.m-hotspot{
+/* Use padding-top trick for responsive aspect ratio */
+.m-slide::before{
+  content:'';
+  display:block;
+  padding-top:177.78%; /* 9:16 ratio */
+}
+.m-slide > *{
   position:absolute;
+}
+.m-hotspot{
   cursor:pointer;
   border-radius:12px;
   transition:all 0.2s;
@@ -276,6 +283,11 @@ img,svg{display:block}
   .mobile-only{display:block}
   .section,.hero,.footer{display:none}
   .mobile-footer{display:block!important}
+  /* Minimal nav on mobile - just burger, slides have their own headers */
+  .nav .logo,.nav .nav-cta{display:none}
+  .nav{background:transparent;border-bottom:none}
+  .nav .burger{position:fixed;top:16px;right:16px;z-index:1001;background:rgba(8,8,8,0.6);border-radius:10px;padding:10px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .nav-inner{justify-content:flex-end}
 }
 @media(max-width:600px){
   .section{padding:70px 16px}
